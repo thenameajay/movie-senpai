@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVault | Your Next Movie Experience</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom styles and Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#111827', // Deep Dark Blue/Gray
+                        'secondary-dark': '#1F2937', // Slightly lighter dark for elements
+                        'accent-red': '#E91E63', // Cinematic Red/Pink
+                        'accent-gold': '#FFD700', // Gold for highlights
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                    animation: {
+                        fadeInUp: 'fadeInUp 0.8s ease-out forwards',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for backdrop/fixed elements */
+        body {
+            background-color: #0d1117; /* Even darker background for a cinematic feel */
+            font-family: 'Inter', sans-serif;
+            color: #E5E7EB;
+        }
+
+        .hero-section {
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=CINEMATIC+BACKGROUND');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(0deg, #111827 5%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .movie-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.4);
+        }
+
+        /* Fixed Header on Scroll Styling */
+        .scrolled-nav {
+            background-color: rgba(17, 24, 39, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-extrabold text-accent-red tracking-wider cursor-pointer">
+                CineVault
+            </div>
+
+            <!-- Navigation Links (Hidden on small screens) -->
+            <div class="hidden md:flex space-x-8 text-gray-300">
+                <a href="#featured" class="hover:text-accent-red transition duration-200">Featured</a>
+                <a href="#" class="hover:text-accent-red transition duration-200">Trending</a>
+                <a href="#" class="hover:text-accent-red transition duration-200">Series</a>
+                <a href="#" class="hover:text-accent-red transition duration-200">About</a>
+            </div>
+
+            <!-- CTA/User Button -->
+            <button class="bg-accent-red hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 hidden md:block">
+                Sign In
+            </button>
+
+            <!-- Mobile Menu Icon (Placeholder for functionality) -->
+            <button class="md:hidden text-gray-300 hover:text-accent-red transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center justify-center text-center">
+        <!-- Overlay -->
+        <div class="hero-overlay absolute inset-0 h-full w-full"></div>
+
+        <!-- Content -->
+        <div class="relative z-20 max-w-4xl px-4 animate-fadeInUp">
+            <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight text-white drop-shadow-lg">
+                The Vault of <span class="text-accent-red">Cinematic Excellence</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-200 mb-8 drop-shadow-md font-light">
+                Discover, stream, and experience the highest-rated movies and exclusive releases.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button class="bg-accent-red hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-xl text-lg shadow-2xl transition duration-300 transform hover:scale-105">
+                    Start Watching Now
+                </button>
+                <button class="bg-transparent border-2 border-white hover:border-accent-red text-white font-bold py-3 px-8 rounded-xl text-lg shadow-lg transition duration-300 transform hover:scale-105">
+                    View Trailers
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Movies Section -->
+    <section id="featured" class="py-16 md:py-24 bg-primary-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 text-white">Trending This Week</h2>
+            <p class="text-center text-xl text-gray-400 mb-12">Hand-picked by our editors. Don't miss these blockbusters.</p>
+
+            <!-- Movie Cards Container (Dynamic JS content here) -->
+            <div id="movie-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8">
+                <!-- Cards will be injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services/Features Section -->
+    <section class="py-16 bg-secondary-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+                <!-- Feature 1 -->
+                <div class="p-6 bg-primary-dark rounded-xl shadow-xl transition duration-300 hover:shadow-accent-red/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-4 text-accent-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2 text-white">4K Streaming</h3>
+                    <p class="text-gray-400">Experience every frame in ultra-high definition quality for an immersive view.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 bg-primary-dark rounded-xl shadow-xl transition duration-300 hover:shadow-accent-red/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-4 text-accent-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Zero Latency</h3>
+                    <p class="text-gray-400">Instant start, zero buffering. Watch your content when you want it.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 bg-primary-dark rounded-xl shadow-xl transition duration-300 hover:shadow-accent-red/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-4 text-accent-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 0A7 7 0 0115 11v1a7 7 0 01-2 5.536l-3.536 3.536m0 0A9 9 0 105.636 5.636l3.536 3.536m0 0A7 7 0 009 13v-1a7 7 0 002-5.536z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Exclusive Library</h3>
+                    <p class="text-gray-400">Access thousands of titles, including CineVault Originals and early releases.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark py-10 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; <span id="current-year"></span> CineVault. All rights reserved. | <a href="#" class="hover:text-accent-red">Privacy Policy</a> | <a href="#" class="hover:text-accent-red">Terms of Use</a></p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-500 hover:text-accent-red transition duration-200">Facebook</a>
+                <a href="#" class="text-gray-500 hover:text-accent-red transition duration-200">Twitter</a>
+                <a href="#" class="text-gray-500 hover:text-accent-red transition duration-200">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Utility: Get Current Year for Footer ---
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // --- Navigation Bar Scroll Effect ---
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled-nav');
+                } else {
+                    header.classList.remove('scrolled-nav');
+                }
+            });
+
+            // --- Dynamic Movie Card Rendering ---
+            const movieGrid = document.getElementById('movie-grid');
+            const movies = [
+                {
+                    title: "The Stellar Drift",
+                    year: 2024,
+                    rating: 9.1,
+                    genre: "Sci-Fi / Thriller",
+                    posterUrl: "https://placehold.co/400x600/1D4ED8/FFFFFF?text=Drift+Poster",
+                    color: "bg-blue-600"
+                },
+                {
+                    title: "Crimson Heist",
+                    year: 2023,
+                    rating: 8.5,
+                    genre: "Action / Crime",
+                    posterUrl: "https://placehold.co/400x600/DC2626/FFFFFF?text=Heist+Poster",
+                    color: "bg-red-600"
+                },
+                {
+                    title: "Echoes of Time",
+                    year: 2022,
+                    rating: 7.9,
+                    genre: "Fantasy / Adventure",
+                    posterUrl: "https://placehold.co/400x600/059669/FFFFFF?text=Echoes+Poster",
+                    color: "bg-green-600"
+                },
+                {
+                    title: "Silent Witness",
+                    year: 2024,
+                    rating: 9.3,
+                    genre: "Mystery / Drama",
+                    posterUrl: "https://placehold.co/400x600/9333EA/FFFFFF?text=Witness+Poster",
+                    color: "bg-purple-600"
+                },
+                {
+                    title: "The Last Dawn",
+                    year: 2023,
+                    rating: 8.2,
+                    genre: "Post-Apocalyptic",
+                    posterUrl: "https://placehold.co/400x600/CA8A04/FFFFFF?text=Dawn+Poster",
+                    color: "bg-yellow-600"
+                }
+            ];
+
+            const createMovieCard = (movie, index) => {
+                const card = document.createElement('div');
+                card.className = `movie-card bg-secondary-dark rounded-xl shadow-2xl overflow-hidden cursor-pointer ${movie.color} bg-opacity-10`;
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.animationFillMode = 'forwards';
+                card.style.animationName = 'fadeInUp';
+
+                card.innerHTML = `
+                    <div class="relative w-full aspect-[2/3] overflow-hidden">
+                        <img src="${movie.posterUrl}"
+                             alt="${movie.title} Poster"
+                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x600/1F2937/FFFFFF?text=No+Image'"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary-dark via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute top-3 right-3 ${movie.color} text-white text-xs font-bold px-2 py-1 rounded-full shadow-md flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-accent-gold" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.69-.921 1.99 0l3.873 11.238a1 1 0 01-.842 1.341H5.978a1 1 0 01-.842-1.341l3.873-11.238z" />
+                            </svg>
+                            ${movie.rating}
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-1 text-white truncate">${movie.title}</h3>
+                        <p class="text-sm text-gray-400 mb-2">${movie.year} | ${movie.genre}</p>
+                        <button class="w-full mt-2 text-xs font-semibold py-2 rounded-lg transition duration-200 border-2 border-accent-red text-accent-red hover:bg-accent-red hover:text-white">
+                            Watch Trailer
+                        </button>
+                    </div>
+                `;
+                return card;
+            };
+
+            movies.forEach((movie, index) => {
+                movieGrid.appendChild(createMovieCard(movie, index));
+            });
+        });
+    </script>
+</body>
+</html>

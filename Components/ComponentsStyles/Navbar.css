@@ -1,0 +1,19 @@
+#navbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    border: 1px solid red;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+#inner-nav{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid blue;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+}

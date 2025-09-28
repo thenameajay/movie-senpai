@@ -1,18 +1,27 @@
 .slider-div{
-    height: 65%;
+    height: 70%;
+    border: 1px solid gray;
+    margin-top: 100px;
+    padding: 0px 20px;
+}
+
+.slider-heading{
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .slider-swiper{
-    height: 90%;
+    height: 85%;
 }
 
 .swiper-slide-outer-div{
     height: 100%;
     padding: 0px 5px;
+    border: 1px solid yellow;
 }
 
 .slide-image-div{
-    height: 90%;
+    height: 85%;
 }
 
 .slide-image{
@@ -20,4 +29,52 @@
     height: 100%;
     width: 100%;
     border-radius: 15px;
+    background-color: maroon;
+}
+
+.slide-title{
+    border: 1px solid green;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* Top Slider Styles */
+.top-slider-div{
+    height: 70%;
+    border: 1px solid gray;
+    margin-top: 100px;
+    padding: 0px 20px;
+}
+
+.top-slider-heading{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.top-slider-swiper{
+    height: 85%;
+}
+
+.top-swiper-slide-outer-div{
+    height: 100%;
+    padding: 0px 5px;
+    border: 1px solid yellow;
+}
+
+.top-slide-image-div{
+    height: 85%;
+}
+
+.top-slide-image{
+    position: unset;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: maroon;
+}
+
+.top-slide-title{
+    border: 1px solid green;
+    font-size: 20px;
+    margin-top: 5px;
 }

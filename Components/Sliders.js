@@ -7,6 +7,7 @@ import './ComponentsStyles/Slider.css'
 import Image from "next/image";
 
 export default function Slider({ sliderData }) {
+    console.log("sliderdata: ",sliderData)
     return (
         <div className="slider-div">
             <h2 className="slider-heading">{sliderData?.type}</h2>
@@ -44,6 +45,8 @@ export default function Slider({ sliderData }) {
                                 <h4 className="slide-title">
                                     {slide?.title}
                                 </h4>
+                                {console.log(slide)}
+                                <p>{slide?.genere?.join(", ")}</p>
                             </div>
                         </SwiperSlide>
                     ))

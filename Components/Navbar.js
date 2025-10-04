@@ -1,3 +1,5 @@
+
+import Image from "next/image";
 import "../Components/ComponentsStyles/Navbar.css"
 
 export default function Navbar() {
@@ -16,7 +18,16 @@ export default function Navbar() {
                     Advanced Search
                 </button> */}
             </nav>
-            <input id="searchbar" type="search" placeholder="Demon Slayer" />
+            <div className="search-div">
+                <input id="search-bar" type="search" placeholder="Demon Slayer" />
+                <Image
+                    className="search-button"
+                    src="search.svg"
+                    alt="search"
+                    width={30}
+                    height={30}
+                />
+            </div>
         </div>
     )
 }

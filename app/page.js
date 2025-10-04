@@ -7,7 +7,7 @@ export default function Home() {
   const img="https://c4.wallpaperflare.com/wallpaper/364/11/747/monkey-d-luffy-one-piece-hd-wallpaper-preview.jpg"
   const moviedata={
     type:"Trendings",
-    slides:[{title:"hello world", img},{title:"demon slayer", img},{title:"AOT", img},{title:"Chainsaw Man", img},{title:"One Piece", img},{title:"Hell's Paradise", img}]
+    slides:[{title:"hello world", img, genere:["adventure", "fantasy", "romcom", "shonen"]},{title:"demon slayer", img, genere:["adventure", "fantasy", "romcom", "shonen"]},{title:"AOT", img, genere:["adventure", "fantasy", "romcom", "shonen"]},{title:"Chainsaw Man", img, genere:["adventure", "fantasy", "romcom", "shonen"]},{title:"One Piece", img, genere:["adventure", "fantasy", "romcom", "shonen"]},{title:"Hell's Paradise", img, genere:["adventure", "fantasy", "romcom", "shonen"]}]
   }
   return (
     <div className="page">

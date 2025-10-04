@@ -29,7 +29,7 @@
     height: 100%;
     width: 100%;
     border-radius: 15px;
-    background-color: maroon;
+    background-color: #332929;
 }
 
 .slide-title{
@@ -40,9 +40,9 @@
 
 /* Top Slider Styles */
 .top-slider-div{
-    height: 70%;
+    height: 85%;
     border: 1px solid gray;
-    margin-top: 100px;
+    margin-top: 95px;
     padding: 0px 20px;
 }
 
@@ -52,25 +52,18 @@
 }
 
 .top-slider-swiper{
-    height: 85%;
+    height: 95%;
 }
 
 .top-swiper-slide-outer-div{
     height: 100%;
     padding: 0px 5px;
     border: 1px solid yellow;
+    background-color: #332929;
 }
 
 .top-slide-image-div{
     height: 85%;
-}
-
-.top-slide-image{
-    position: unset;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-    background-color: maroon;
 }
 
 .top-slide-title{

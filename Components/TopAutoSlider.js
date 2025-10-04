@@ -36,13 +36,13 @@ export default function TopAutoSlider({ sliderData }) {
                                         height={800}
                                         width={800}
                                     /> */}
-                                    <div className="top-slide-image">
-
-                                    </div>
                                 </div>
                                 <h4 className="top-slide-title">
                                     {slide?.title}
                                 </h4>
+                                <p>
+                                    {slide?.genere?.join(", ")}
+                                </p>
                             </div>
                         </SwiperSlide>
                     ))

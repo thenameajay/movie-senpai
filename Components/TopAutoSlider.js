@@ -28,7 +28,7 @@ export default function TopAutoSlider({ sliderData }) {
                     sliderData?.slides?.map((slide, i) => (
                         <SwiperSlide className="top-swiper-slide" key={i}>
                             <div className="top-swiper-slide-outer-div">
-                                <div className="top-slide-image-div">
+                                {/* <div className="top-slide-image-div"> */}
                                     {/* <Image
                                         className="slide-image"
                                         src={slide?.img}
@@ -36,13 +36,15 @@ export default function TopAutoSlider({ sliderData }) {
                                         height={800}
                                         width={800}
                                     /> */}
+                                {/* </div> */}
+                                <div className="top-slider-details">
+                                    <h4 className="top-slide-title">
+                                        {slide?.title}
+                                    </h4>
+                                    <p>
+                                        {slide?.genere?.join(", ")}
+                                    </p>
                                 </div>
-                                <h4 className="top-slide-title">
-                                    {slide?.title}
-                                </h4>
-                                <p>
-                                    {slide?.genere?.join(", ")}
-                                </p>
                             </div>
                         </SwiperSlide>
                     ))

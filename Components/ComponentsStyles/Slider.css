@@ -1,73 +1,116 @@
-.slider-div{
+.slider-div {
     height: 70%;
     border: 1px solid gray;
     margin-top: 100px;
     padding: 0px 20px;
 }
 
-.slider-heading{
+.slider-heading {
     font-size: 30px;
     margin-bottom: 10px;
 }
 
-.slider-swiper{
+.slider-swiper {
     height: 85%;
 }
 
-.swiper-slide-outer-div{
+.swiper-slide-outer-div {
     height: 100%;
     padding: 0px 5px;
     border: 1px solid yellow;
 }
 
-.slide-image-div{
-    height: 85%;
+.slide-image-div {
+    height: 80%;
 }
 
-.slide-image{
+.slide-image {
     position: unset;
     height: 100%;
     width: 100%;
     border-radius: 15px;
-    background-color: #332929;
+    /* background-color: #332929; */
+    background-image: url("https://wallpapercave.com/wp/wp6121950.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-.slide-title{
+.slide-title {
     border: 1px solid green;
     font-size: 20px;
     margin-top: 5px;
 }
 
 /* Top Slider Styles */
-.top-slider-div{
+.top-slider-div {
     height: 85%;
     border: 1px solid gray;
     margin-top: 95px;
     padding: 0px 20px;
 }
 
-.top-slider-heading{
-    font-size: 30px;
-    margin-bottom: 10px;
+.top-slider-details {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
 }
 
-.top-slider-swiper{
+.top-slider-details p {
+    font-size: 18px;
+}
+
+.top-slide-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+    border: 1px solid green;
+}
+
+.top-slider-swiper {
     height: 95%;
 }
 
-.top-swiper-slide-outer-div{
+.top-swiper-slide-outer-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 100%;
     padding: 0px 5px;
     border: 1px solid yellow;
-    background-color: #332929;
+    /* background-color: #332929; */
+    /* background: linear-gradient(to right, #1a1a1a, #000000); */
+    background-image: linear-gradient(to right, rgb(0 0 0), rgb(0 0 0 / 0%)), url("https://wallpapercave.com/wp/wp6121742.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
-.top-slide-image-div{
+.top-slide-image-div {
     height: 85%;
 }
 
-.top-slide-title{
-    border: 1px solid green;
-    font-size: 20px;
-    margin-top: 5px;
+@media (max-width: 700px){
+    .slider-div{
+        height: 70%;
+    }
+    .top-slider-div{
+        padding: 0px;
+        height: 55%;
+    }
+    .top-slide-title{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px){
+    .slider-div{
+        height: 60%;
+    }
+}
+
+@media (max-width: 500px){
+    .slider-div{
+        height: 50%;
+    }
 }

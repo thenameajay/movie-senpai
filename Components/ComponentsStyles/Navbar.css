@@ -17,6 +17,11 @@
     color: white;
 }
 
+#brand-name{
+    font-size: 30px;
+    font-family: cursive;
+}
+
 #inner-nav{
     display: flex;
     flex-direction: row;
@@ -49,4 +54,56 @@
     padding: 0px 5px;
     display: flex;
     align-items: center;
+}
+
+.menu-deactive {
+    display: none;
+}
+
+#nav-menu{
+    display: none;
+}
+
+.menu-active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 90vh;
+    top: 10vh;
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+}
+
+.slide-menu-nav-pages {
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 35px;
+}
+
+@media (max-width: 700px) {
+    #nav-menu{
+        display: flex;
+    }
+
+    #inner-nav{
+        display: none;
+    }
+
+    #brand-name{
+        font-size: 25px;
+    }
+    
+    .search-div{
+        width: 40%;
+    }
+
+    #search-bar{
+        width: calc(100% - 30px);
+    }
 }

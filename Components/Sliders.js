@@ -13,7 +13,7 @@ export default function Slider({ sliderData }) {
             <Swiper
                 modules={[Navigation]}
                 navigation // enables next/prev buttons
-                spaceBetween={20}
+                spaceBetween={10}
                 slidesPerView={4} // visible slides
                 draggable={true}
                 grabCursor={true}

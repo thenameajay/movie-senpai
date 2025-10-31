@@ -1,6 +1,6 @@
 .slider-div {
     height: 70%;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     margin-top: 100px;
     padding: 0px 20px;
 }
@@ -17,7 +17,7 @@
 .swiper-slide-outer-div {
     height: 100%;
     padding: 0px 5px;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 
 .slide-image-div {
@@ -36,7 +36,7 @@
 }
 
 .slide-title {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     font-size: 20px;
     margin-top: 5px;
 }
@@ -44,7 +44,7 @@
 /* Top Slider Styles */
 .top-slider-div {
     height: 85%;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     margin-top: 95px;
     padding: 0px 20px;
 }
@@ -65,7 +65,7 @@
 .top-slide-title {
     font-size: 42px;
     margin-bottom: 10px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .top-slider-swiper {
@@ -78,7 +78,7 @@
     align-items: center;
     height: 100%;
     padding: 0px 5px;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     /* background-color: #332929; */
     /* background: linear-gradient(to right, #1a1a1a, #000000); */
     background-image: linear-gradient(to right, rgb(0 0 0), rgb(0 0 0 / 0%)), url("https://wallpapercave.com/wp/wp6121742.jpg");
